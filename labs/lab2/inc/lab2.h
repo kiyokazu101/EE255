@@ -10,7 +10,7 @@
 
 //Calibration Voltage in volts (Adjust to your values)
 #define CAL_VOLTS 10.0
-#define CAL_CURR  3.0
+#define CAL_CURR  1.0
 
 //Initialize the energy meter
 void meter_init();

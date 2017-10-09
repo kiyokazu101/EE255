@@ -53,7 +53,6 @@ void start_conversion() {
   ADC_CHAN_Type chan_to_convert[2] = {GE_A3, GE_A1};
   adc_enable_channels(chan_to_convert, 2);
   adc_initialize_channels();
-
   adc_callback(&my_adc_callback);
   adc_start();
 }
@@ -110,8 +109,8 @@ int main() {
 
         if (!gpio_read_pin(GE_PBTN2)) {
           calibrate_voltage();
-          lcd_goto(0, 2);
-          lcd_puts("Stored");
+          // lcd_goto(0, 2);
+          // lcd_puts("Stored");
         }
         break;
       case DISP_CALI:
@@ -124,8 +123,8 @@ int main() {
 
         if (!gpio_read_pin(GE_PBTN2)) {
           calibrate_current();
-          lcd_goto(0, 2);
-          lcd_puts("Stored");
+          // lcd_goto(0, 2);
+          // lcd_puts("Stored");
         }
         break;
       default:
@@ -133,7 +132,7 @@ int main() {
         break;
     }
 
-    delay_ms(50);
+    delay_ms(500);
   }
 }
 
