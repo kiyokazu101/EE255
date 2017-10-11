@@ -6,11 +6,17 @@
  * @date  09.2015
  */
 
+#ifndef	_LAB2_H_
+#define _LAB2_H_
+
 #include "ge_libs.h"
 
 //Calibration Voltage in volts (Adjust to your values)
-#define CAL_VOLTS 10.0
-#define CAL_CURR  1.0
+#define CAL_VOLTS 30.0
+#define CAL_CURR  3.0
+
+extern float energy_result; // integration of the energy 
+extern float power_result;
 
 //Initialize the energy meter
 void meter_init();
@@ -29,3 +35,5 @@ void calibrate_current();
 
 //ADC callback function
 void my_adc_callback(uint16_t *data);
+
+#endif

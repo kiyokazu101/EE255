@@ -15,7 +15,8 @@
 // calibration parameters
 float volts_per_div = 400.0/4096.0;
 float amps_per_div  = 300.0/4096.0;
-float power_result;
+
+
 
 uint16_t zero_volts;
 uint16_t zero_amps;
@@ -28,6 +29,10 @@ uint16_t stored_zero_amps;
 uint16_t stored_volts_per_div;
 uint16_t stored_amps_per_div;
 uint16_t shift;
+
+float energy_result = 0.0;
+float power_result = 0.0;
+
 
 //current readings
 __IO uint16_t voltage_reading;
@@ -143,6 +148,10 @@ void meter_display() {
 
   snprintf(buff, size, "Power: %4.2f W", power_result);;
   lcd_goto(0, 2);
+  lcd_puts(buff);
+
+  snprintf(buff, size, "Energy: %4.2f J", energy_result);;
+  lcd_goto(0, 3);
   lcd_puts(buff);
 
 }

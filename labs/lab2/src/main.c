@@ -25,6 +25,8 @@ uint8_t state = DISP_MAIN;
 bool btn_pressed = false;
 
 void change_state() {
+  energy_result += power_result * 0.05; 
+
   if (!gpio_read_pin(GE_PBTN1)) {
     if (!btn_pressed) {
       state++;
@@ -86,6 +88,7 @@ int main() {
         meter_display();
         break;
       case DISP_OFF:
+        energy_result = 0;
         lcd_goto(0, 0);
         lcd_puts("Calibration: offsets");
         lcd_goto(0, 1);
@@ -100,6 +103,7 @@ int main() {
         }
         break;
       case DISP_CALV:
+        energy_result = 0;
         lcd_goto(0, 0);
         lcd_puts("Calibration: voltage");
         lcd_goto(0, 1);
@@ -114,6 +118,7 @@ int main() {
         }
         break;
       case DISP_CALI:
+        energy_result = 0;
         lcd_goto(0, 0);
         lcd_puts("Calibration: current");
         lcd_goto(0, 1);
