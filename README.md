@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Green Electronics Repo
 Libraries and code base for Stanford Green Electronics (EE155). This repository contains resources required for completing the labs and final project.
 
@@ -40,3 +41,6 @@ In the `labs` folder you will find starter code for the various labs.
 Included in the repository is an `init_bitbucket.sh` script. This file is included to automate the process of mapping the repository to a new, private repository hosted by bitbucket. Before running this script, you need to have created a bitbucket account. After execution, you will have initialized a new private repo and `git push` and `git pull` will be mapped there by default.
 
 To pull the latest patches (which should be done at least once before starting a new lab) run `git pull upstream master`.
+=======
+# EE255
+>>>>>>> 21f7e72a8e88109668e54919ef5fcc8983f7b201
